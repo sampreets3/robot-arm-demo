@@ -1,4 +1,4 @@
-<robot name="scara_robot">
+<robot name="scara_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
  
   <material name="black">
     <color rgba="0 0 0 1.0" />
@@ -127,5 +127,8 @@
   </link>
 
   <ros2_control name="myscarabot" type="system">
+    <hardware>
+      <plugin>test_system</plugin>
+    </hardware>
   </ros2_control>
 </robot>

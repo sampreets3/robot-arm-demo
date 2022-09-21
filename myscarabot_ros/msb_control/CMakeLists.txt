@@ -16,7 +16,6 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
-find_package(rviz_visual_tools REQUIRED)
 
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   ament_cmake
@@ -24,7 +23,6 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   std_msgs
   geometry_msgs
   rclcpp_action
-  rviz_visual_tools
 )
 
 include_directories(include)
@@ -40,6 +38,8 @@ install(TARGETS fk_demo_node
 # Install the include directory in the build/share
 install(DIRECTORY include
   DESTINATION share/${PROJECT_NAME})
+
+install(DIRECTORY controllers DESTINATION share/${PROJECT_NAME})
 
 ament_export_include_directories(include)
 ament_export_libraries(${library_name})

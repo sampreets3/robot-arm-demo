@@ -22,7 +22,7 @@ find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-install(DIRECTORY meshes urdf DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY meshes urdf xacro DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY rviz DESTINATION share/${PROJECT_NAME})
 
