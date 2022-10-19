@@ -16,6 +16,8 @@ RUN sudo apt-get update && sudo apt-get install ros-foxy-control-msgs \
     iputils-ping -y
 
 RUN git clone -b foxy-devel  https://github.com/PickNikRobotics/rviz_visual_tools.git /home/ros2_ws/src/rviz_visual_tools
+RUN git clone -b foxy 	     https://github.com/ros-controls/ros2_control.git	      /home/ros2_ws/src/ros2_control
+RUN git clone -b foxy	     https://github.com/ros-controls/gazebo_ros2_control.git  /home/ros2_ws/src/gazebo_ros2_control
 
 RUN cd /home/ros2_ws && rosdep update && rosdep install -r --from-paths src --ignore-src --rosdistro foxy -y
 
