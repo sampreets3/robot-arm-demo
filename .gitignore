@@ -1,2 +1,5 @@
 .AUTH_TOKEN
 .vscode/
+build/**
+install/**
+log/**
