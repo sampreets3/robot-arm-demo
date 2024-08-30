@@ -117,53 +117,30 @@
       <origin rpy="0 0 0" xyz="0 0 0.1" />
       <material name="black" />
     </visual>
+  </link>
+
+  <link name="link_4">
     <visual>
       <geometry>
         <cylinder radius="0.075" length="0.05" />
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.175" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <material name="black" />
     </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.075" length="0.05" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <material name="black" />
+    </collision>
   </link>
 
-  <!-- Add ros2_control tag -->
-  <ros2_control name="myscarabot" type="system">
-    <hardware>
-      <plugin>test_hardware_components/TestTwoJointSystem</plugin>
-    </hardware>
-
-    <joint name="joint_1">
-      <command_interface name="position">
-        <param name="min">-2.356</param>
-        <param name="max">2.356</param>
-      </command_interface>
-
-      <state_interface name="position" />
-      <state_interface name="velocity" />
-      <state_interface name="effort"   />
-    </joint>
-
-    <joint name="joint_2">
-      <command_interface name="position">
-        <param name="min">-2.356</param>
-        <param name="max">2.356</param>
-      </command_interface>
-      
-      <state_interface name="position" />
-      <state_interface name="velocity" />
-      <state_interface name="effort"   />
-    </joint>
-
-    <joint name="joint_3">
-      <command_interface name="position">
-        <param name="min">0.0</param>
-        <param name="max">0.4</param>
-      </command_interface>
-      
-      <state_interface name="position" />
-      <state_interface name="velocity" />
-      <state_interface name="effort"   />
-    </joint>
-  </ros2_control>
-
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3" />
+    <child link="link_4" />
+    <limit lower="-2.356" upper="2.356" effort="10.0" velocity="1.0"/>
+    <origin rpy="0 0 0" xyz="0 0 -0.175" />
+    <axis xyz="0 0 1" />
+  </joint>
 </robot>
