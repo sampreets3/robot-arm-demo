@@ -41,6 +41,7 @@ def generate_launch_description():
         arguments=['-d', rviz_config],
         output='screen')
     
+    '''
     gazebo_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
     )
@@ -51,6 +52,7 @@ def generate_launch_description():
         arguments=['-topic', 'robot_description','-entity', 'myscarabot'],
         output='screen'
     )
+    '''
         
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -59,7 +61,7 @@ def generate_launch_description():
     ld.add_action(start_joint_state_publisher_cmd)
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(rviz_cmd)
-    ld.add_action(gazebo_node)
-    ld.add_action(spawn_entity_node)
+    #ld.add_action(gazebo_node)
+    #ld.add_action(spawn_entity_node)
 
     return ld   
