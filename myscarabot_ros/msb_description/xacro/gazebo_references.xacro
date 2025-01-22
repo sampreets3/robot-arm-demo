@@ -17,39 +17,24 @@
       <material name="red">
         <color rgba="1.0 0.0 0.0 1.0" />
       </material>
-      
+
     <gazebo reference="base">
         <material>Gazebo/Blue</material>
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
-        <maxContacts>1</maxContacts>
     </gazebo>
 
     <gazebo reference="link_1">
         <material>Gazebo/White</material>
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
-        <maxContacts>1</maxContacts>
     </gazebo>
 
     <gazebo reference="link_2">
         <material>Gazebo/White</material>
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
-        <maxContacts>1</maxContacts>
     </gazebo>
 
     <gazebo reference="link_3">
         <material>Gazebo/Black</material>
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
-        <maxContacts>1</maxContacts>
     </gazebo>
 
     <gazebo reference="link_4">
         <material>Gazebo/Black</material>
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
-        <maxContacts>1</maxContacts>
     </gazebo>
 </robot>

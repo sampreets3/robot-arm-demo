@@ -17,6 +17,7 @@ find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
+find_package(msb_interfaces REQUIRED)
 
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   ament_cmake
@@ -25,16 +26,20 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   geometry_msgs
   rclcpp_action
   sensor_msgs
+  msb_interfaces
 )
 
 include_directories(include)
 
 # Add executables here
+add_executable(fkin_server src/fkin_server.cpp)
+ament_target_dependencies(fkin_server ${THIS_PACKAGE_INCLUDE_DEPENDS})
+
 add_executable(fk_demo_node src/main_node.cpp src/msbFKinDemo.cpp)
 ament_target_dependencies(fk_demo_node ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
 # Install the node
-install(TARGETS fk_demo_node
+install(TARGETS fk_demo_node fkin_server
   DESTINATION lib/${PROJECT_NAME})
 
 # Install the include directory in the build/share
