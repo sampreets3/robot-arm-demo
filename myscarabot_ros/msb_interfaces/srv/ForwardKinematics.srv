@@ -1,0 +1,11 @@
+# Given a desired joint state, calculate the pose
+# of the end-effector in 3d space using forward 
+# kinematics.
+
+sensor_msgs/JointState      desired_joint_state     # The desired joint state of the robot
+
+---
+
+geometry_msgs/PoseStamped   computed_pose           # The computed pose of the end-effector
+bool                        success                 # True if solution found, false otherwise
+
